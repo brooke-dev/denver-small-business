@@ -27,7 +27,6 @@ function App() {
 
   }, []);
 
-  
   // Fetch request for business posts allowing for a user to fetch once when logged in!
   const fetchBusinessPosts = () => {
     fetch (`/business_posts`)
@@ -40,7 +39,9 @@ function App() {
     })
   }
 
-  console.log(businessPosts)
+  // console.log(businessPosts)
+
+  // console.log(user)
 
   // Login/signup logic below: 
   if (!user) return <LoginContainer fetchBusinessPosts={fetchBusinessPosts} setUser={setUser} />
@@ -61,7 +62,9 @@ function App() {
           <About/>
         </Route>
         <Route exact path="/userProfile">
-          <UserProfile/>
+          <UserProfile
+            user={user}
+          />
         </Route>
       </Switch>
     </div>
