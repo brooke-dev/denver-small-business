@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import { useHistory } from 'react-router-dom'
 
 function BusinessPostsCard({id,businessName, businessCategory, location, website,favorites, image, my_user_id, username}) {
