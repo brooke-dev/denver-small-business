@@ -30,6 +30,7 @@ body {
   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 }
 
+
 /* -----------------User Profile Page Modal Edit ---------------------- */
 
 .user-form-container {
@@ -157,5 +158,11 @@ body {
   padding-bottom: 15px;
   font-family: var(--font-martel);
   color: var(--dark-green)
+}
+
+
+/* -----Hidden class --------- */
+.hidden {
+  visibility: hidden;
 }
 

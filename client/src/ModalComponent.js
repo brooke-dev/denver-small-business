@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { useParams, Link, useHistory } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import {
     MDBBtn,
     MDBModal,
@@ -11,11 +11,10 @@ import {
     MDBModalFooter,
   } from 'mdb-react-ui-kit';
 
-function ModalComponent({user, updateUserProfile, setUpdateUserProfile}) {
+function ModalComponent({user, setUpdateUserProfile}) {
     const [basicModal, setBasicModal] = useState(false);
     const toggleShow = () => setBasicModal(!basicModal);
     const [updated, setUpdated] = useState(false)
-    const [errors, setErrors] = useState([])
     // User Profile state
     const [firstName, setFirstName] = useState(user.first_name)
     const [lastName, setLastName] = useState(user.last_name)
@@ -24,7 +23,7 @@ function ModalComponent({user, updateUserProfile, setUpdateUserProfile}) {
     const [zipCode, setZipCode] = useState(user.zip_code)
     const [email, setEmail] = useState(user.email)
 
-    const history = useHistory()
+    // const history = useHistory()
   
     // renders the user you want to edit
     const userId = user.id  
@@ -55,24 +54,8 @@ function ModalComponent({user, updateUserProfile, setUpdateUserProfile}) {
         setEmail(e.target.value)
     }
 
-    // Fetch request for correct user info
-    // useEffect(() => {
-    //     fetch(`users/${userId}`)
-    //     .then ((res) => res.json())
-    //     .then ((user) => {
-    //         setFirstName(user.first_name)
-    //         setLastName(user.last_name)
-    //         setUsername(user.username)
-    //         setBusinessOwner(user.business_owner)
-    //         setZipCode(user.zip_code)
-    //         setEmail(user.email)
-    //         console.log(user)
-            
-    //     });
-
-    // }, [userId, setUpdateUserProfile])
-    // console.log(userId)
-    
+    // Do not need a useEffect hook to fetch user id as we are passing in the current user who is logged in. 
+      // Checked with console.log(user.id)
 
     // send update form data to database
 
@@ -88,7 +71,7 @@ function ModalComponent({user, updateUserProfile, setUpdateUserProfile}) {
             user_id: userId,
       }
         
-        fetch(`user/${userId}`,{
+        fetch(`users/${userId}`,{
           method: "PATCH",
           headers: {
             "Content-Type": "application/json"
@@ -108,10 +91,7 @@ function ModalComponent({user, updateUserProfile, setUpdateUserProfile}) {
   
      }
   
-    const editMsgClassName = updated ? '' : 'hidden';
-    const formErrorMsg = errors.map((err) => (
-        <p key={err}>{err}</p>
-        ))
+  const editMsgClassName = updated ? '' : 'hidden';
 
   return (
        <>
@@ -145,7 +125,15 @@ function ModalComponent({user, updateUserProfile, setUpdateUserProfile}) {
 
                     <label>Zip Code:</label>
                     <input type='text'id="zip_code" name="zip_code" value={zipCode} onChange={handleZipCode} required/>
-        
+                    
+                    <MDBBtn>Save changes
+                      <div id="edit-complete-msg" className={editMsgClassName}>
+                      <h3>Edit complete!</h3>
+                        <Link to="/userProfile">
+                          <button className='return-to-userProfile'> View My Profile </button>
+                        </Link>
+                      </div>
+                    </MDBBtn>
                 </form>
             </div>
             </MDBModalBody>
@@ -154,7 +142,6 @@ function ModalComponent({user, updateUserProfile, setUpdateUserProfile}) {
               <MDBBtn color='secondary' onClick={toggleShow}>
                 Close
               </MDBBtn>
-              <MDBBtn>Save changes</MDBBtn>
             </MDBModalFooter>
           </MDBModalContent>
         </MDBModalDialog>
