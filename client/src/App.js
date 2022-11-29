@@ -13,6 +13,7 @@ function App() {
   const [businessPosts, setBusinessPosts] = useState([])
   const [errors, setErrors] = useState ([])
   const [user, setUser] = useState(null)
+  const [updateUserProfile, setUpdateUserProfile]=([])
 
   // Auto-login if user_id is in session: fetches businessPosts
   useEffect(() => {
@@ -25,7 +26,7 @@ function App() {
       }
     });
 
-  }, []);
+  }, [updateUserProfile]);
 
   // Fetch request for business posts allowing for a user to fetch once when logged in!
   const fetchBusinessPosts = () => {
@@ -50,7 +51,7 @@ function App() {
     <div className="App">
       <NavBar user={user} setUser={setUser}/>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/business_posts">
           <Home 
             // user={user}
             businessPosts={businessPosts}
@@ -64,6 +65,8 @@ function App() {
         <Route exact path="/userProfile">
           <UserProfile
             user={user}
+            setUpdateUserProfile={setUpdateUserProfile}
+            updateUserProfile={updateUserProfile}
           />
         </Route>
       </Switch>

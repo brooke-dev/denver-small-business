@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import './index.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
@@ -7,11 +7,14 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+// Below is the update from React 17 to 18. 
+const root = createRoot(document.getElementById('root'));
+
+root.render(
   <Router>
     <App />
   </Router>,
-  document.getElementById('root')
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

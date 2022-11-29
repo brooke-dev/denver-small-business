@@ -18,18 +18,30 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* -----------------USER PROFILE PAGE FROM MDB------------------- */
-
-.user-profile-page {
+/* -----------------USER PROFILE PAGE (FROM MDB)------------------- */
+.gradient-custom {
   /* fallback for old browsers */
-  background: #fbc2eb;
-  
+  background: #f6d365;
+
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
-  
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
-  }
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+}
+
+/* -----------------User Profile Page Modal Edit ---------------------- */
+
+.user-form-container {
+  color: black;
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100px
+}
+
 
 /*------------ NAVBAR ---------- */
 .nav {
