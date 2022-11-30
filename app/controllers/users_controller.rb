@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     wrap_parameters format: []
     skip_before_action :authorize, only: :create
 
-    # Creating a user(signup) backend, using bang(!) to raise error if not correctly put in. 
+    #POST Creating a user(signup) backend, using bang(!) to raise error if not correctly put in. /user/:id
     def create
         user = User.create!(user_params)
         if user.valid?
@@ -13,12 +13,18 @@ class UsersController < ApplicationController
         end
     end
 
-    #keep logged-in
+    #SHOW keep logged-in /user/:id
     def show
         current_user = User.find(session[:user_id])
         render json: current_user, status: :ok
-        
-        # include: ['plant_posts','reviews.plant_post'], status: :ok
+        # include: ['business_posts','reviews.business_posts'], status: :ok
+    end
+
+    #PATCH :update /user/:id
+    def update
+        user= User.find(params[:id])
+        user.update!(user_params)
+        render json: user
     end
 
     private

@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
-import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
+import React from 'react';
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography} from 'mdb-react-ui-kit';
 import ModalComponent from '../ModalComponent';
 
 function UserProfile({user, updateUserProfile, setUpdateUserProfile}) {
@@ -41,8 +40,6 @@ function UserProfile({user, updateUserProfile, setUpdateUserProfile}) {
                         <MDBCardText className="text-muted">{user.zip_code}</MDBCardText>
                       </MDBCol>
                     </MDBRow>
-
-                    {/* <MDBTypography tag="h6">Information</MDBTypography> */}
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
                       <MDBCol size="6" className="mb-3">

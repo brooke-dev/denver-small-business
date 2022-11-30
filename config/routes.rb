@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :business_posts, only: [:index, :show]
-  resources :users, only: []
+  resources :users, only: [:update]
  
   #unique auth routes for login/signup
   post '/signup', to: "users#create"
