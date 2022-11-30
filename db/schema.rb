@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_23_193924) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_214438) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_193924) do
     t.index ["user_id"], name: "index_business_posts_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "business_post_id", null: false
+    t.string "title"
+    t.integer "rating"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_post_id"], name: "index_reviews_on_business_post_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -40,4 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_193924) do
   end
 
   add_foreign_key "business_posts", "users"
+  add_foreign_key "reviews", "business_posts"
+  add_foreign_key "reviews", "users"
 end
