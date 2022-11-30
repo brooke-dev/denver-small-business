@@ -20,6 +20,7 @@ function NavBar({user, setUser}) {
             <NavLink to="/business_posts">Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/userProfile">Profile</NavLink>
+            <NavLink to="/reviews">My Reviews</NavLink>
        
             <span>Hello {user.username}!
             <button className='sign-out' onClick={handleLogoutClick}>Logout</button>
