@@ -2,7 +2,7 @@ import React , {useState} from 'react'
 import { Link } from 'react-router-dom';
 import ReviewModal from './ReviewModal'
 
-
+// Finish this functionality with update and delete. 
 const ReviewBusinessCard = ({comment,title,id,rating,setUpdateReviews,setUpdateAfterDelete}) => {
   const [openModal, setOpenModal] = useState(false)
 
