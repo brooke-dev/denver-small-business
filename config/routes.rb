@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reviews, only: [:index, :show, :create, :destroy, :update]
   resources :business_posts, only: [:index, :show]
   resources :users, only: [:update]
  

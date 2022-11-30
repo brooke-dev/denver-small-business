@@ -19,3 +19,14 @@ puts "Seeding Business Posts..."
     image:"https://lh3.googleusercontent.com/p/AF1QipPfpwqIpH06-FtSSsgx5xpe8WYpn1fEYeuP2mGk=s680-w680-h510")
 end
 
+puts "Seeding Reviews..."
+
+Review.create(user_id:User.all.sample.id, business_post_id:BusinessPost.all.sample.id, title: "Best place ever!!!", comment: "I don't think I could go anywhere else. The place is all about sustainability and I LOVE it!!", rating: 5)
+
+Review.create(user_id:User.all.sample.id, business_post_id:BusinessPost.all.sample.id, title: "Hate it!!!", comment: "They suk", rating: 0)
+
+Review.create(user_id:User.all.sample.id, business_post_id:BusinessPost.all.sample.id, title: "Pretty okay", comment: "meh", rating: 3)
+
+Review.create(user_id:User.all.sample.id, business_post_id:BusinessPost.all.sample.id, title: "Cool place", comment: "Really liked staff and how easy it was to shop. Hoping they get more products soon as I wish I could have bought more. Interesting that they focus on sustainability and have plastic wrapping though.", rating: 3)
+
+Review.create(user_id:User.all.sample.id, business_post_id:BusinessPost.all.sample.id, title: "Ugly", comment: "They suk", rating: 0)
