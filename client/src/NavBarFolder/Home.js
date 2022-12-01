@@ -1,13 +1,14 @@
 import React from 'react'
 import BusinessPostsList from '../BusinessPostsFolder/BusinessPostsList'
 
-function Home({errors, user, businessPosts, user_id}) {
+function Home({errors, user, businessPosts, userId, setUpdateReviews}) {
   return (
     <div>
         <BusinessPostsList 
             user={user}
             businessPosts={businessPosts}
-            // user_id={user.id}
+            setUpdateReviews={setUpdateReviews}
+            userId={userId}
         />
 
         <h3>

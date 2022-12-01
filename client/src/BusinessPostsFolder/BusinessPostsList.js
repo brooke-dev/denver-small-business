@@ -1,10 +1,10 @@
 import React from 'react'
 import BusinessPostsCard from './BusinessPostsCard'
 
-function BusinessPostsList({businessPosts, user_id}) {
-
+function BusinessPostsList({businessPosts, userId, setUpdateReviews}) {
+  
     const renderBusinessPostCard = businessPosts.map((oneBusinessPost)=>{
-        return(
+      return(
             <BusinessPostsCard 
                 key={oneBusinessPost.id}
                 id={oneBusinessPost.id}
@@ -15,9 +15,12 @@ function BusinessPostsList({businessPosts, user_id}) {
                 website={oneBusinessPost.website}
                 favorites={oneBusinessPost.favorites}
                 image={oneBusinessPost.image}
-                my_user_id={user_id}
+                myUserId={userId}
+                reviews={oneBusinessPost.reviews}
                 // Need to change serializer to have this show I think:
-                // username={oneBusinessPost.user.username}
+                reviewUsername={oneBusinessPost.user.username}
+                setUpdateReviews={setUpdateReviews}
+      
             />
         )
     })

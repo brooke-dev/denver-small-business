@@ -1,9 +1,9 @@
 import React from 'react'
 import ReviewBusinessCard from './ReviewBusinessCard'
 
-const ReviewBusinessList = ({reviews, setUpdateReviews, setUpdateAfterDelete}) => {
-  
-    const renderReviewCard = reviews.map ((oneReview) => {
+const ReviewBusinessList = ({reviews, setUpdateAfterDelete, setUpdateReviews}) => {
+  // console.log(reviews.reviews)
+    const renderReviewCard = reviews.reviews?.map ((oneReview) => {
         return (
           <ReviewBusinessCard
            key={oneReview.id}
@@ -18,7 +18,8 @@ const ReviewBusinessList = ({reviews, setUpdateReviews, setUpdateAfterDelete}) =
         )
       })
   return (
-    <div>{renderReviewCard}</div>
+    <div>{renderReviewCard ? renderReviewCard : <h3> No review </h3> }</div>
+  //  <div>Hello</div>
   )
 }
 
