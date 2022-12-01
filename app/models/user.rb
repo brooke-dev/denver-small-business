@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :business_posts, dependent: :destroy
     has_many :reviews, dependent: :destroy
     has_many :reviewed_business_posts, :through => :reviews, :source => :business_post
     
