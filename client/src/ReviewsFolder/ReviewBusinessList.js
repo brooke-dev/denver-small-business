@@ -1,9 +1,15 @@
 import React from 'react'
 import ReviewBusinessCard from './ReviewBusinessCard'
 
-const ReviewBusinessList = ({reviews, setUpdateAfterDelete, setUpdateReviews}) => {
+const ReviewBusinessList = ({
+  // reviews, 
+  // setUpdateAfterDelete, 
+  // setUpdateReviews,
+  user,
+  setUser
+}) => {
   // console.log(reviews.reviews)
-    const renderReviewCard = reviews.reviews?.map ((oneReview) => {
+    const renderReviewCard = user.reviews?.map ((oneReview) => {
         return (
           <ReviewBusinessCard
            key={oneReview.id}
@@ -13,12 +19,22 @@ const ReviewBusinessList = ({reviews, setUpdateAfterDelete, setUpdateReviews}) =
            id={oneReview.id}
            rating={oneReview.rating}
         //    image={oneReview.business_post?.image}
-           setUpdateReviews={setUpdateReviews}
-           setUpdateAfterDelete={setUpdateAfterDelete}/>
+          //  setUpdateReviews={setUpdateReviews}
+          //  setUpdateAfterDelete={setUpdateAfterDelete}
+          user={user}
+          setUser={setUser}
+           />
         )
       })
+      // const allReviews = () => {
+      //   return (
+      //     <ReviewBusinessCard reviews={reviews}/>
+      //   )
+      // }
+       
+      
   return (
-    <div>{renderReviewCard ? renderReviewCard : <h3> No review </h3> }</div>
+    <div>{renderReviewCard ? renderReviewCard : <h3> No review </h3> } </div>
   //  <div>Hello</div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import BusinessPostsCard from './BusinessPostsCard'
 
-function BusinessPostsList({businessPosts, userId, setUpdateReviews}) {
+function BusinessPostsList({businessPosts, setUser, userId, setBusinessPosts}) {
   
     const renderBusinessPostCard = businessPosts.map((oneBusinessPost)=>{
       return(
@@ -19,8 +19,8 @@ function BusinessPostsList({businessPosts, userId, setUpdateReviews}) {
                 reviews={oneBusinessPost.reviews}
                 // Need to change serializer to have this show I think:
                 reviewUsername={oneBusinessPost.user.username}
-                setUpdateReviews={setUpdateReviews}
-      
+                setBusinessPosts={setBusinessPosts}
+                setUser={setUser}
             />
         )
     })

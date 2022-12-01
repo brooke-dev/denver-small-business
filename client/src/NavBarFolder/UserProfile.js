@@ -2,7 +2,7 @@ import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography} from 'mdb-react-ui-kit';
 import ModalComponent from '../ModalComponent';
 
-function UserProfile({user, updateUserProfile, setUpdateUserProfile}) {
+function UserProfile({user, setUser}) {
 
   return (
     <div>
@@ -22,8 +22,7 @@ function UserProfile({user, updateUserProfile, setUpdateUserProfile}) {
                   {/* MODAL FOR EDIT BUTTON */}
                   <ModalComponent
                     user={user}
-                    updateUserProfile={updateUserProfile}
-                    setUpdateUserProfile={setUpdateUserProfile}
+                    setUser={setUser}
                   />
                 </MDBCol>
                 <MDBCol md="8">

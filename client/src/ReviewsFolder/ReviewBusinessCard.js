@@ -2,14 +2,18 @@ import React , {useState} from 'react'
 import ReviewModal from './ReviewModal'
 
 // Finish this functionality with update and delete. 
-const ReviewBusinessCard = ({comment,title,id,rating,setUpdateReviews,setUpdateAfterDelete}) => {
-  const [openModal, setOpenModal] = useState(false)
-
+const ReviewBusinessCard = ({user, setUser, comment,title,id,rating
+  // setUpdateReviews,setUpdateAfterDelete
+}) => {
+  
   function handleDelete(){
     fetch(`/reviews/${id}`, {
       method: 'DELETE',
     })
-    .then(setUpdateAfterDelete)
+    .then(() => {
+      const updatedUser = {...user, reviews: user.reviews.filter(review => review.id !== id)}
+      setUser(updatedUser)
+    })
   }
 
   return (
@@ -18,7 +22,7 @@ const ReviewBusinessCard = ({comment,title,id,rating,setUpdateReviews,setUpdateA
     <h3>{rating}</h3>
     <h3>{comment}</h3>
 
-    <ReviewModal openModal={openModal} handleDelete={handleDelete} id={id}/>
+    <ReviewModal user={user} setUser={setUser} handleDelete={handleDelete} id={id} />
 
   </div>
   )
