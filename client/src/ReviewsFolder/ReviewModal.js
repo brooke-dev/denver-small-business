@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import { Link } from 'react-router-dom';
 import {
     MDBBtn,
     MDBModal,
@@ -11,7 +11,7 @@ import {
     MDBModalFooter,
   } from 'mdb-react-ui-kit';
 
-const ReviewModal = ({openModal, handleClose, handleDelete}) => {
+const ReviewModal = ({id, handleDelete}) => {
     const [basicModal, setBasicModal] = useState(false);
     const toggleShow = () => setBasicModal(!basicModal);
     const [updated, setUpdated] = useState(false)
@@ -20,12 +20,12 @@ const ReviewModal = ({openModal, handleClose, handleDelete}) => {
 
   return (
     <>
-    <MDBBtn onClick={toggleShow}>Edit Profile</MDBBtn>
+    <MDBBtn onClick={toggleShow}>Delete</MDBBtn>
     <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
       <MDBModalDialog>
         <MDBModalContent>
           <MDBModalHeader>
-            <MDBModalTitle>Edit Profile</MDBModalTitle>
+            <MDBModalTitle>Delete</MDBModalTitle>
             <MDBBtn className='btn-close' color='black' onClick={toggleShow}></MDBBtn>
           </MDBModalHeader>
 
@@ -34,6 +34,30 @@ const ReviewModal = ({openModal, handleClose, handleDelete}) => {
                 Are you sure you want to delete? This cannot be undone. 
             </div>
             <button className='submit-btn' onClick={() => handleDelete()} >Confirm Delete</button>         
+          </MDBModalBody>
+
+          <MDBModalFooter>
+            <MDBBtn color='secondary' onClick={toggleShow}>
+              Close
+            </MDBBtn>
+          </MDBModalFooter>
+        </MDBModalContent>
+      </MDBModalDialog>
+    </MDBModal>
+
+    <MDBBtn onClick={toggleShow}>Edit</MDBBtn>
+    <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
+      <MDBModalDialog>
+        <MDBModalContent>
+          <MDBModalHeader>
+            <MDBModalTitle>Edit</MDBModalTitle>
+            <MDBBtn className='btn-close' color='black' onClick={toggleShow}></MDBBtn>
+          </MDBModalHeader>
+
+          <MDBModalBody>
+            <Link to={`/reviews/${id}`}>
+              <button className= "edit-btn">Edit</button>
+            </Link>    
           </MDBModalBody>
 
           <MDBModalFooter>

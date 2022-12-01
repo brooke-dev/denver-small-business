@@ -54,7 +54,7 @@ function BusinessPostsCard({id, reviews, setUpdateReviews, reviewUsername, busin
   .then((res) => {
     if (res.ok) {
       res.json().then((userData) => {
-        history.push(`/business_posts`)
+        history.push(`/`)
         setUpdateReviews(userData)
         setComment('')
         setTitle('')

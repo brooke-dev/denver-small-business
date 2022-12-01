@@ -64,7 +64,7 @@ function App() {
       <NavBar user={user} setUser={setUser}/>
       <Switch>
 
-        <Route exact path="/business_posts">
+        <Route exact path="/">
           <Home 
             // user={user}
             businessPosts={businessPosts}
