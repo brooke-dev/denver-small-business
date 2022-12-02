@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-function BusinessPostsCard({id, reviews, setUpdateReviews, reviewUsername, businessName, businessCategory, location, website,favorites, image, myUserId, username}) {
+function BusinessPostsCard({id, reviews, setBusinessPosts, reviewUsername, businessName, businessCategory, location, website,favorites, image, myUserId, username}) {
   
   // //map through the comments
   const renderBusinessReviews = reviews?.map((review) => {
     return(
-    <p className="comments" key={review.review.id}>+++ {review.review.comment} - {review.user.username}</p>
+      <div className="comments">
+        <p key={review.review.title}>{review.review.title}</p>
+        <p key={review.review.rating}>{review.review.rating}</p>
+        <p key={review.review.id}> {review.review.comment} - {review.user.username}</p>
+      </div>
+    
     )
   })
 
@@ -53,9 +58,9 @@ function BusinessPostsCard({id, reviews, setUpdateReviews, reviewUsername, busin
   })
   .then((res) => {
     if (res.ok) {
-      res.json().then((userData) => {
-        history.push(`/business_posts`)
-        setUpdateReviews(userData)
+      res.json().then((businessPost) => {
+        history.push(`/`)
+        setBusinessPosts((currentBusinessPosts) => currentBusinessPosts.map(oneBusinessPost => oneBusinessPost.id !== businessPost.id ? oneBusinessPost : businessPost))
         setComment('')
         setTitle('')
         setRating('')

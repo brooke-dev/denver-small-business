@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     # POST :create /reviews/:id
     def create
         review = Review.create!(review_params)
-        render json: review, status: :created
+        render json: review.business_post, status: :created
     end
     # PATCH :update /reviews/:id
 

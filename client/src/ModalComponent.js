@@ -11,7 +11,7 @@ import {
     MDBModalFooter,
   } from 'mdb-react-ui-kit';
 
-function ModalComponent({user, setUpdateUserProfile}) {
+function ModalComponent({user, setUser}) {
     const [basicModal, setBasicModal] = useState(false);
     const toggleShow = () => setBasicModal(!basicModal);
     const [updated, setUpdated] = useState(false)
@@ -81,7 +81,7 @@ function ModalComponent({user, setUpdateUserProfile}) {
           .then(res => {
             if (res.ok) {
               res.json().then((updatedProfile) => {
-                setUpdateUserProfile(updatedProfile)
+                setUser(updatedProfile)
                 setUpdated(updated => !updated)
               });
             } else {
@@ -126,14 +126,11 @@ function ModalComponent({user, setUpdateUserProfile}) {
                     <label>Zip Code:</label>
                     <input type='text'id="zip_code" name="zip_code" value={zipCode} onChange={handleZipCode} required/>
                     
-                    <MDBBtn>Save changes
+                    <MDBBtn>Save changes </MDBBtn>
                       <div id="edit-complete-msg" className={editMsgClassName}>
                       <h3>Edit complete!</h3>
-                        <Link to="/userProfile">
-                          <button className='return-to-userProfile'> View My Profile </button>
-                        </Link>
                       </div>
-                    </MDBBtn>
+                    
                 </form>
             </div>
             </MDBModalBody>

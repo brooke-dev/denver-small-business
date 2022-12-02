@@ -1,21 +1,20 @@
 import React , {useState} from 'react'
-import { Link } from 'react-router-dom';
 import ReviewModal from './ReviewModal'
 
 // Finish this functionality with update and delete. 
-const ReviewBusinessCard = ({comment,title,id,rating,setUpdateReviews,setUpdateAfterDelete}) => {
-  const [openModal, setOpenModal] = useState(false)
-
+const ReviewBusinessCard = ({user, setUser, comment,title,id,rating
+  // setUpdateReviews,setUpdateAfterDelete
+}) => {
+  
   function handleDelete(){
     fetch(`/reviews/${id}`, {
       method: 'DELETE',
     })
-    .then(setUpdateAfterDelete)
+    .then(() => {
+      const updatedUser = {...user, reviews: user.reviews.filter(review => review.id !== id)}
+      setUser(updatedUser)
+    })
   }
-
-  //open/close modal
-  const handleOpen = () => setOpenModal(true);
-  const handleClose = () => setOpenModal(false);
 
   return (
     <div className="review-card plant-card">
@@ -23,13 +22,7 @@ const ReviewBusinessCard = ({comment,title,id,rating,setUpdateReviews,setUpdateA
     <h3>{rating}</h3>
     <h3>{comment}</h3>
 
-    <Link to={`/reviews/${id}`}>
-    <button className= "edit-btn">Edit</button>
-    </Link>
-
-    <button className= "delete-btn" onClick={handleOpen}>X</button>
-
-    <ReviewModal openModal={openModal} handleDelete={handleDelete} handleClose={handleClose}/>
+    <ReviewModal user={user} setUser={setUser} handleDelete={handleDelete} id={id} />
 
   </div>
   )

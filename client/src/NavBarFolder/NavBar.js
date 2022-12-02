@@ -17,7 +17,7 @@ function NavBar({user, setUser}) {
 
     return (
         <div className='nav'>
-            <NavLink to="/business_posts">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/userProfile">Profile</NavLink>
             <NavLink to="/reviews">My Reviews</NavLink>
