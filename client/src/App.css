@@ -1,16 +1,49 @@
-.App {
-  text-align: center;
+:root{
+  --box-shadow: rgb(142, 108, 62);
+  --border-grey:rgb(187, 183, 172);
+  --white: rgb(228, 232, 234);
+  --white-blur: rgba(228, 232, 234, 0.3);
+  --dark-grey:rgb(67, 67, 65);
+  --green: rgb(191, 121, 95);
+  --seed-green: #E7B89A;
+  --dark-green: rgb(80, 106, 103);
+  --font-q:'Questrial', sans-serif;
+  --font-martel:'Martel', serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.App {
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+  /* display: flex; */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-martel);
+}
+
+.page-container{
+  padding-top: 100px;
+}
+/* button{
+  color:var(--border-grey);
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+} */
+
+button:hover{
+  font-weight: bold;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+h1, h3{
+  color: var(--dark-green);
 }
 
 /* ------------------------Set up for MDB Fonts----------------------*/
@@ -18,7 +51,7 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* -----------------USER PROFILE PAGE (FROM MDB)------------------- */
+/* -----------------USER PROFILE PAGE (using MDB)------------------- */
 .gradient-custom {
   /* fallback for old browsers */
   background: #f6d365;
@@ -28,6 +61,18 @@ body {
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+}
+
+.user-profile-page{
+  width: 100vw;
+  padding: none;
+  margin: 0 auto;
+  max-width: 1500px;
+  background-image: url("./imagesFolder/plantCoffee.jpg");
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: scroll;
 }
 
 
@@ -42,12 +87,75 @@ body {
   justify-content: center;
   width: 100px
 }
+/* -------------------------About----------------------------------- */
 
+.about-container{
+  width:500vw;
+  padding: none;
+  margin: 0 auto;
+  max-width: 1500px;
+  background-image: url("./imagesFolder/background1.jpg");
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: scroll;
+
+}
+.about{
+  padding: 100px 50px;
+  margin: 0 auto;
+  width: 60vw;
+  max-width: 1500px;
+  color: var(--white);
+	backdrop-filter: blur(15px);
+  }
+
+.about h1, .about h2, .about h3{
+    color: var(--dark-green)
+  }
+
+.about li{
+  list-style: none;
+}
+
+  .about-information img{
+    height:200px;
+    width:200ox;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 10px auto;
+  }
+
+  .about-photos{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-information{
+    display: grid;
+    justify-content: center;
+    flex-direction: row;
+    margin: 10px;
+    width: 400px;
+  }
+
+  .about-information a{
+    text-decoration: none;
+    color:rgb(184, 158, 173);
+  }
+
+  .about-information p{
+    font-size: 14px;
+    height: 25px;
+    color:rgb(191, 121, 95)
+  }
 
 /*------------ NAVBAR ---------- */
 .nav {
   width: 100vw;
-  position: fixed;
+  position: center;
   margin: 0 auto;
   display: flex;
   justify-content: left;
@@ -57,7 +165,7 @@ body {
   z-index: 2;
   max-width: 1500px;
   background-color: var(--green);
-  /* backdrop-filter: blur(5px); */
+  backdrop-filter: blur(5px);
 }
 
 .nav a{
@@ -86,7 +194,7 @@ body {
 }
 
 
-/*------------Signup pages ---------- */
+/*------------Signup/Login pages ---------- */
 .login-container{
   display: flex;
   flex-direction: column;
@@ -132,7 +240,6 @@ body {
 .login-form button, .signup-form button{
  margin-top: 20px;
  color: white;
-
 
 }
 
@@ -180,17 +287,27 @@ body {
   justify-content: center;
 }
 
-.review-input{
+.title-input, .review-input {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
+  padding: 3px;
 }
 
-.review-input textarea{
-  height: 100px;
-  width: 30vw;
+.rating-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 3px
+}
+
+.title-input textarea{
+  height: 55px;
+  width: 100vw;
   max-width: 400px;
   padding: 12px 20px;
   border: 1px solid #ccc;
@@ -199,8 +316,100 @@ body {
   font-size: 16px;
 }
 
+.rating-input textarea{
+  height: 50px;
+  width: 50w;
+  max-width: 400px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
 
-/* -----Hidden class --------- */
+.review-input textarea{
+  height: 100px;
+  width: 60vw;
+  max-width: 400px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+
+/* -------------------------Business Post Page ------------------*/
+.business-post-card {
+  background-position: top 50% right 0%;
+  background-repeat: no-repeat; 
+  background-size: center;
+  background-attachment: fixed;
+  overflow-y: scroll;
+}
+.businessUsername{
+  position:absolute;
+  left: 150px;
+  /* top: 100px;
+  left: 100px; */
+  font-size: 20px;
+  background-color: transparent;
+  padding: 0;
+}
+
+.business-page {
+  height: 100vh;
+  width: 100vw;
+  padding: none;
+  margin: none;
+  /* max-width: 1500px;
+  max-height: 1200px;   */
+  background-image: url("./imagesFolder/light.jpg");
+  background-position: top 20% left 0%;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: scroll;
+}
+
+
+/* ----------------Card Styling---------------- */
+.business-card{
+  position: relative;
+  margin: 60px;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 60px 0;
+  border-bottom: 3px solid var(--dark-green);
+  /* backdrop-filter: blur(10px); */
+}
+
+.business-card img {
+  width: 400px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-grey);
+}
+
+/* -----------------------------Review Page--------------------- */
+
+.review-page{
+  background-image: url("./imagesFolder/light.jpg");
+}
+
+/* ------------Movie Class------------ */
+#background-video{
+  z-index: -1;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* --------------------------Hidden class ---------------------- */
 .hidden {
   visibility: hidden;
 }

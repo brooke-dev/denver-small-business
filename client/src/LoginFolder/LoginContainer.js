@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Login from "./Login";
 import Signup from "./Signup";
 import { Link } from "react-router-dom";
+import VideoBackground from "../imagesFolder/VideoBackground.mp4"
 
 const LoginContainer = ({fetchBusinessPosts, setUser}) => {
     const [showLogin, setShowLogin] = useState(true);
@@ -10,7 +11,7 @@ const LoginContainer = ({fetchBusinessPosts, setUser}) => {
     <div className="login-container">
          {showLogin ? (
             <div>
-                {/* <video id="background-video" src={VideoName} autoPlay loop muted /> */}
+                <video id="background-video" src={VideoBackground} autoPlay loop muted />
                 <div className="loginBlur">
                     <Login setUser={setUser} fetchBusinessPosts={fetchBusinessPosts}/>
                     <p>Don't have an account?</p>
@@ -21,7 +22,7 @@ const LoginContainer = ({fetchBusinessPosts, setUser}) => {
             </div>
         ) : (
             <div>
-                {/* <video id="background-video" src={VideoBackground} autoPlay loop muted /> */}
+                <video id="background-video" src={VideoBackground} autoPlay loop muted />
                 <div className="loginBlur">
                     <Signup setUser={setUser} fetchBusinessPosts={fetchBusinessPosts}/>
                     <p>Have an account?</p>
