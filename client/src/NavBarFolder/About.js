@@ -25,6 +25,8 @@ const About = () => {
               <img src= {Brooke_about} alt="Brooke"/>
               <a href="https://www.linkedin.com/in/brooke-ross-se/" target="_blank" >Brooke <i className="fa-brands fa-linkedin" /></a> 
               <p>Brooke's favorite plant is... a Myrtillocactus geometrizans!</p>
+
+              ADD STUFF HERE
           </div>           
       </div> */}
   
