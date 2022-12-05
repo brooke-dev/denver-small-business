@@ -3,7 +3,7 @@ import BusinessPostsList from '../BusinessPostsFolder/BusinessPostsList'
 
 function Home({errors, businessPosts, userId, user, setUser, setBusinessPosts}) {
   return (
-    <div>
+    <div className='page-container business-page'>
         <BusinessPostsList 
             user={user}
             setUser={setUser}

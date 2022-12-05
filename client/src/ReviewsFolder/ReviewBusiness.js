@@ -3,7 +3,7 @@ import ReviewBusinessList from './ReviewBusinessList'
 
 const ReviewBusiness = ({user, setUser}) => {
   return (
-    <div className='page-container'>
+    <div className='page-container review-page'>
       <h1>My Reviews</h1>
       <ReviewBusinessList 
       // reviews={reviews}

@@ -8,8 +8,10 @@ function BusinessPostsCard({id, reviews, setBusinessPosts, reviewUsername, busin
   const renderBusinessReviews = reviews?.map((review) => {
     return(
       <div className="comments">
-        <p key={review.review.title}>{review.review.title}</p>
-        <p key={review.review.rating}>{review.review.rating}</p>
+        <div className="title-rating-box">
+          <p key={review.review.title}> title: {review.review.title}</p>
+          <p key={review.review.rating}> rating: {review.review.rating}</p>
+        </div>
         <p key={review.review.id}> {review.review.comment} - {review.user.username}</p>
       </div>
     
@@ -90,14 +92,16 @@ function BusinessPostsCard({id, reviews, setBusinessPosts, reviewUsername, busin
       <div className="review-list">
         {renderBusinessReviews.length > 0 ? renderBusinessReviews : noReviewsYet}
       </div>
-      
-
       <form className="review-form" onSubmit={handleCommentSubmit}>
-      <h4>Add Review</h4>
-        <div className="review-input">
+      <h5>Add Review</h5>
+        <div className="title-input">
           <textarea value={title} placeholder="Add a title..." onChange={handleTitle}></textarea>
-          <input type= "number" id="rating" name="rating" min="0" max="5" placeholder="Add a rating 0-5" onChange={handleRating}></input>
+        </div>
+        <div className="review-input">
           <textarea value={comment} placeholder="Add a comment..." onChange={handleComments}></textarea>
+        </div>
+        <div className="rating-input">
+          <input type= "number" id="rating" name="rating" min="0" max="5" placeholder="0-5" onChange={handleRating}></input>
           <button className='submit-btn'>Submit</button>
         </div>
       </form>

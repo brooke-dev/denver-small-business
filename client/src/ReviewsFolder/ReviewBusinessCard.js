@@ -17,10 +17,10 @@ const ReviewBusinessCard = ({user, setUser, comment,title,id,rating
   }
 
   return (
-    <div className="review-card plant-card">
-    <h2>{title}</h2>
-    <h3>{rating}</h3>
-    <h3>{comment}</h3>
+    <div className="review-card business-card">
+    <h3>title: {title}</h3>
+    <h3>rating: {rating}</h3>
+    <h3>comment: {comment}</h3>
 
     <ReviewModal user={user} setUser={setUser} handleDelete={handleDelete} id={id} />
 
