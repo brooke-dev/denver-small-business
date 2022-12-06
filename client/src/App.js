@@ -31,6 +31,7 @@ function App() {
         res.json().then((userData) => {
           setUser(userData)
           fetchBusinessPosts();
+          console.log(userData)
         });
       }
     });

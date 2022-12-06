@@ -22,6 +22,7 @@ function ModalComponent({user, setUser}) {
     const [businessOwner, setBusinessOwner] = useState(user.business_owner)
     const [zipCode, setZipCode] = useState(user.zip_code)
     const [email, setEmail] = useState(user.email)
+    const [avatarData, setAvatarData] = useState(null)
 
     // const history = useHistory()
   
@@ -54,6 +55,10 @@ function ModalComponent({user, setUser}) {
         setEmail(e.target.value)
     }
 
+    const handleAvatarData = (e) => {
+      setAvatarData(e.target.files[0])
+    }
+
     // Do not need a useEffect hook to fetch user id as we are passing in the current user who is logged in. 
       // Checked with console.log(user.id)
 
@@ -61,22 +66,33 @@ function ModalComponent({user, setUser}) {
 
     const handleUpdateSubmit = (e) => {
         e.preventDefault();
-        const formData = {
-            first_name: firstName,
-            last_name: lastName,
-            username: username, 
-            business_owner: businessOwner,
-            zip_code: zipCode,
-            email: email,
-            user_id: userId,
-      }
+      //   const formData = {
+      //       first_name: firstName,
+      //       last_name: lastName,
+      //       username: username, 
+      //       business_owner: businessOwner,
+      //       zip_code: zipCode,
+      //       email: email,
+      //       user_id: userId,
+      //       avatar: avatarData,
+      // }
+
+        const formData = new FormData()
+        formData.append('user_id', userId)
+        formData.append('avatar', avatarData)
+        formData.append('first_name', firstName)
+        formData.append('last_name', lastName)
+        formData.append('username', username)
+        formData.append('business_owner', businessOwner)
+        formData.append('zip_code', zipCode)
+        formData.append('email', email)
         
         fetch(`users/${userId}`,{
           method: "PATCH",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData),
+          // headers: {
+          //   "Content-Type": "application/json"
+          // },
+          body: formData,
           })
           .then(res => {
             if (res.ok) {
@@ -125,6 +141,9 @@ function ModalComponent({user, setUser}) {
 
                     <label>Zip Code:</label>
                     <input type='text'id="zip_code" name="zip_code" value={zipCode} onChange={handleZipCode} required/>
+
+                    <label> Avatar </label>
+                    <input type= 'file' accept='image/*' onChange={handleAvatarData} />
                     
                     <MDBBtn>Save changes </MDBBtn>
                       <div id="edit-complete-msg" className={editMsgClassName}>
