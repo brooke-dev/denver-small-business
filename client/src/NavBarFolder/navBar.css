@@ -1,0 +1,41 @@
+
+/*------------ NAVBAR ---------- */
+.nav {
+    width: 100vw;
+    position: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: left;
+    align-items:left;
+    align-content: center;
+    flex-direction: row;
+    z-index: 2;
+    max-width: 2000px;
+    background-color: var(--green);
+    backdrop-filter: blur(5px);
+  }
+  
+  .nav a{
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 25px 0; 
+    margin: 0 25px;
+    transition: 0.2s ease-in-out;
+    color: var(--white);
+  }
+  .nav a:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .nav span{
+    margin-left: auto;
+    margin-top: 15px;
+    padding-right: 20px;
+    color: var(--white);
+  }
+  
+  .sign-out{
+    margin: 7px;
+  }

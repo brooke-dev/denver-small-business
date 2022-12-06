@@ -1,0 +1,72 @@
+/* -------------Review List on BusinessPosts Page -------------- */
+.review-list{
+    width: 100vw;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 200px;
+    max-height: 250px;
+    text-align: left;
+    border: 1px solid var(--border-grey);
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px var(--box-shadow);
+  }
+  
+  .review-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .title-input, .review-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 3px;
+  }
+  
+  .rating-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 3px
+  }
+  
+  .title-input textarea{
+    height: 55px;
+    width: 100vw;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+  }
+  
+  .rating-input textarea{
+    height: 50px;
+    width: 50w;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+  }
+  
+  .review-input textarea{
+    height: 100px;
+    width: 60vw;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+  }
+  

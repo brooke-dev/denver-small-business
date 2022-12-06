@@ -1,0 +1,73 @@
+
+/*------------Signup/Login pages ---------- */
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .login-container button{
+    margin-top: 20px;
+    color: white;
+    background-image: linear-gradient(to right,  var(--dark-green) 0%, #448061 51%, #4c9a6c 100%);
+  }
+  
+  .login-page, .signup-page{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 50px auto;
+    width: 50vw;
+    max-width: 500px;
+  }
+  
+  #login-img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin-top: 30px;
+  }
+  
+  .login-form, .signup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  
+  .login-form button, .signup-form button{
+   margin-top: 20px;
+   color: white;
+  
+  }
+  
+  .login-form label, .signup-form label{
+    font-family: var(--abril-font);
+    font-size: 20px;
+    color: var(--main-plum);
+  }
+  
+  .login-form input, .signup-form input{
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 5px;
+  }
+  .loginBlur{
+    backdrop-filter: blur(15px);
+    background-color: var(--white-blur);
+    /* border: 1px solid white; */
+    border-radius: 7px;
+    margin: 200px auto;
+    width: 50vw;
+    max-width: 500px;
+    padding-bottom: 15px;
+    font-family: var(--font-martel);
+    color: var(--dark-green)
+  }

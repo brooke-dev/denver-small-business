@@ -3,6 +3,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import { Link } from "react-router-dom";
 import VideoBackground from "../imagesFolder/VideoBackground.mp4"
+import './signupLogin.css'
 
 const LoginContainer = ({fetchBusinessPosts, setUser}) => {
     const [showLogin, setShowLogin] = useState(true);

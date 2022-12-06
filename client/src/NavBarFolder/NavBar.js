@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
+import './navBar.css'
 
 function NavBar({user, setUser}) {
     const history = useHistory()

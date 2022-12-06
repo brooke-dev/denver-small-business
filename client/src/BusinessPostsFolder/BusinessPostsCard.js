@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-function BusinessPostsCard({id, reviews, setBusinessPosts, reviewUsername, businessName, businessCategory, location, website,favorites, image, myUserId, username}) {
+function BusinessPostsCard({id, reviews, setBusinessPosts, reviewUsername, businessName, businessCategory, location, website,favorites, image, myUserId, username, avatar}) {
   
   // //map through the comments
   const renderBusinessReviews = reviews?.map((review) => {
@@ -85,10 +85,10 @@ function BusinessPostsCard({id, reviews, setBusinessPosts, reviewUsername, busin
       <h3>{businessName}</h3>
       <h4>{businessCategory}</h4>
       <img src={image} alt={businessName} />
-      <p className='businessUsername'><span>Created By: </span>{username}</p>
-      <p>Favorites: {favorites}</p>
-      <p>{website}</p>
-      <p>Location: {location}</p>
+      <p className='businessUsername' ><img src={avatar} alt={username}/></p>
+      <p>❤️{favorites}</p>
+      <p><a href={website}>Vist {businessName}'s website here!</a></p>
+      <p><a href="http://maps.google.com/?q={location}">{location}</a></p>
       <div className="review-list">
         {renderBusinessReviews.length > 0 ? renderBusinessReviews : noReviewsYet}
       </div>
