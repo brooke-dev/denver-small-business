@@ -3,7 +3,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCar
 import ModalComponent from '../ModalComponent';
 
 function UserProfile({user, setUser}) {
-
+  
   return (
     <div>
       <h1>Hi, {user.first_name}</h1>
@@ -15,7 +15,8 @@ function UserProfile({user, setUser}) {
               <MDBRow className="g-0">
                 <MDBCol md="4" className="gradient-custom text-center text-white"
                   style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+
+                  <MDBCardImage src={user.avatar}
                     alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
                   <MDBTypography tag="h5">{user.first_name} {user.last_name}</MDBTypography>
                   <MDBCardText>username: {user.username}</MDBCardText>

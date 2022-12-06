@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     #PATCH :update /user/:id
     def update
         user= User.find(params[:id])
+        byebug
         user.update!(user_params)
         render json: user        
     end
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 
     # Strong params
     def user_params
-        params.permit(:first_name, :last_name, :username, :password, :business_owner, :email, :zip_code, :password_confirmation)
+        params.permit(:first_name, :last_name, :username, :password, :business_owner, :email, :zip_code, :avatar, :password_confirmation)
     end
 
 end

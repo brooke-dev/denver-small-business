@@ -9,6 +9,7 @@ const Signup = ({ setUser, fetchBusinessPosts }) => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("")
     const [zipCode, setZipCode] = useState ("")
+    // const [avatar, setAvatar] = useState(null)
     // No ability to add a business profile yet. State below is for later use.
    // const [businessOwer, setBusinessOwner] = useState(false)
    
@@ -25,7 +26,6 @@ const Signup = ({ setUser, fetchBusinessPosts }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      // body: JSON.stringify({ username: username, password: password, firstName: firstName, lastName: lastName, email: email, zipCode: zipCode}),
       body: JSON.stringify({ username: username, first_name: firstName, last_name: lastName, email, zip_code:zipCode, password: password}),
     }).then((res) => {
       setIsLoading(false)
@@ -101,6 +101,15 @@ const Signup = ({ setUser, fetchBusinessPosts }) => {
         value={zipCode}
         onChange={(e) => setZipCode(e.target.value)}
       />
+
+      {/* <label htmlFor="avatar">Avatar</label>
+      <input
+        type="file"
+        accept="image/*"
+        id="image"
+        value={avatar}
+        onChange={(e) => setAvatar(e.target.files[0])}
+      /> */}
 {/* 
       No input yet for a business owner, but if adding later :  */}
       {/* <label htmlFor="businessOwner">Business Owner</label>
