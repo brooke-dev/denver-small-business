@@ -60,11 +60,10 @@ body {
   padding: 60px 0;
   border-bottom: 3px solid var(--dark-green);
   color: var(--white);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(30px);
   max-width: 50%;
   max-height: 50%;
   padding: 20px 40px;
-  /* backdrop-filter: blur(10px); */
 }
 
 .business-card img {
@@ -75,6 +74,17 @@ body {
   margin-bottom: 10px;
   border: 1px solid var(--border-grey);
 }
+
+  /* ------------Movie Class------------ */
+  #background-video{
+    z-index: -1;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 
 /* --------------------------Hidden class ---------------------- */
 .hidden {
