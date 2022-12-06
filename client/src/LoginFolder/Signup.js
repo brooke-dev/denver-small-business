@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+
 const Signup = ({ setUser, fetchBusinessPosts }) => {
     // All of the state logic that handles the sign up fields and information
     const [username, setUsername] = useState("");
@@ -9,6 +10,7 @@ const Signup = ({ setUser, fetchBusinessPosts }) => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("")
     const [zipCode, setZipCode] = useState ("")
+    // If you want to upload an avatar upon signup add this state:
     // const [avatar, setAvatar] = useState(null)
     // No ability to add a business profile yet. State below is for later use.
    // const [businessOwer, setBusinessOwner] = useState(false)
@@ -26,6 +28,7 @@ const Signup = ({ setUser, fetchBusinessPosts }) => {
       headers: {
         "Content-Type": "application/json",
       },
+      // If you want to add an avatar you will not stringify: look up documentation
       body: JSON.stringify({ username: username, first_name: firstName, last_name: lastName, email, zip_code:zipCode, password: password}),
     }).then((res) => {
       setIsLoading(false)

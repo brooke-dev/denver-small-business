@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     #PATCH :update /user/:id
     def update
         user= User.find(params[:id])
-        byebug
+        # byebug
         user.update!(user_params)
         render json: user        
     end

@@ -1,5 +1,6 @@
 import React from 'react'
 import ReviewBusinessList from './ReviewBusinessList'
+import './reviewPageCSS.css'
 
 const ReviewBusiness = ({user, setUser}) => {
   return (

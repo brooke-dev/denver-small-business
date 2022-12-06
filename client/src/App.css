@@ -25,8 +25,8 @@
 .page-container{
   padding-top: 100px;
 }
-/* button{
-  color:var(--border-grey);
+button{
+  color:var(--green);
   outline: none;
   border: none;
   border-radius: 4px;
@@ -34,7 +34,7 @@
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: bold;
-} */
+}
 
 button:hover{
   font-weight: bold;
@@ -43,334 +43,13 @@ button:hover{
 }
 
 h1, h3{
-  color: var(--dark-green);
+  color: var(--seed-green);
 }
 
 /* ------------------------Set up for MDB Fonts----------------------*/
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
-
-/* -----------------USER PROFILE PAGE (using MDB)------------------- */
-.gradient-custom {
-  /* fallback for old browsers */
-  background: #f6d365;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
-}
-
-.user-profile-page{
-  width: 100vw;
-  padding: none;
-  margin: 0 auto;
-  max-width: 1500px;
-  background-image: url("./imagesFolder/plantCoffee.jpg");
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-y: scroll;
-}
-
-
-/* -----------------User Profile Page Modal Edit ---------------------- */
-
-.user-form-container {
-  color: black;
-  text-align: center;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  width: 100px
-}
-/* -------------------------About----------------------------------- */
-
-.about-container{
-  width:500vw;
-  padding: none;
-  margin: 0 auto;
-  max-width: 1500px;
-  background-image: url("./imagesFolder/background1.jpg");
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-y: scroll;
-
-}
-.about{
-  padding: 100px 50px;
-  margin: 0 auto;
-  width: 60vw;
-  max-width: 1500px;
-  color: var(--white);
-	backdrop-filter: blur(15px);
-  }
-
-.about h1, .about h2, .about h3{
-    color: var(--dark-green)
-  }
-
-.about li{
-  list-style: none;
-}
-
-  .about-information img{
-    height:200px;
-    width:200ox;
-    object-fit: cover;
-    border-radius: 5px;
-    margin: 10px auto;
-  }
-
-  .about-photos{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .about-information{
-    display: grid;
-    justify-content: center;
-    flex-direction: row;
-    margin: 10px;
-    width: 400px;
-  }
-
-  .about-information a{
-    text-decoration: none;
-    color:rgb(184, 158, 173);
-  }
-
-  .about-information p{
-    font-size: 14px;
-    height: 25px;
-    color:rgb(191, 121, 95)
-  }
-
-/*------------ NAVBAR ---------- */
-.nav {
-  width: 100vw;
-  position: center;
-  margin: 0 auto;
-  display: flex;
-  justify-content: left;
-  align-items:left;
-  align-content: center;
-  flex-direction: row;
-  z-index: 2;
-  max-width: 1500px;
-  background-color: var(--green);
-  backdrop-filter: blur(5px);
-}
-
-.nav a{
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 25px 0; 
-  margin: 0 25px;
-  transition: 0.2s ease-in-out;
-  color: var(--white);
-}
-.nav a:hover{
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.nav span{
-  margin-left: auto;
-  margin-top: 15px;
-  padding-right: 20px;
-  color: var(--white);
-}
-
-.sign-out{
-  margin: 7px;
-}
-
-
-/*------------Signup/Login pages ---------- */
-.login-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.login-container button{
-  margin-top: 20px;
-  color: white;
-  background-image: linear-gradient(to right,  var(--dark-green) 0%, #448061 51%, #4c9a6c 100%);
-}
-
-.login-page, .signup-page{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  margin: 50px auto;
-  width: 50vw;
-  max-width: 500px;
-}
-
-#login-img{
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  margin-top: 30px;
-}
-
-.login-form, .signup-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-
-.login-form button, .signup-form button{
- margin-top: 20px;
- color: white;
-
-}
-
-.login-form label, .signup-form label{
-  font-family: var(--abril-font);
-  font-size: 20px;
-  color: var(--main-plum);
-}
-
-.login-form input, .signup-form input{
-  padding: 5px;
-  border: 2px solid;
-  border-radius: 5px;
-}
-.loginBlur{
-  backdrop-filter: blur(15px);
-  background-color: var(--white-blur);
-  /* border: 1px solid white; */
-  border-radius: 7px;
-  margin: 200px auto;
-  width: 50vw;
-  max-width: 500px;
-  padding-bottom: 15px;
-  font-family: var(--font-martel);
-  color: var(--dark-green)
-}
-/* -------------Review List on BusinessPosts Page -------------- */
-.review-list{
-  width: 100vw;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 10px;
-  overflow-y: scroll;
-  height: 200px;
-  max-height: 250px;
-  text-align: left;
-  border: 1px solid var(--border-grey);
-  border-radius: 5px;
-  box-shadow: 5px 10px 10px var(--box-shadow);
-}
-
-.review-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.title-input, .review-input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  padding: 3px;
-}
-
-.rating-input {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  padding: 3px
-}
-
-.title-input textarea{
-  height: 55px;
-  width: 100vw;
-  max-width: 400px;
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-}
-
-.rating-input textarea{
-  height: 50px;
-  width: 50w;
-  max-width: 400px;
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-}
-
-.review-input textarea{
-  height: 100px;
-  width: 60vw;
-  max-width: 400px;
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-}
-
-/* -------------------------Business Post Page ------------------*/
-.business-post-card {
-  background-position: top 50% right 0%;
-  background-repeat: no-repeat; 
-  background-size: center;
-  background-attachment: fixed;
-  overflow-y: scroll;
-}
-.businessUsername{
-  position:absolute;
-  left: 150px;
-  /* top: 100px;
-  left: 100px; */
-  font-size: 20px;
-  background-color: transparent;
-  padding: 0;
-}
-
-.business-page {
-  height: 100vh;
-  width: 100vw;
-  padding: none;
-  margin: none;
-  /* max-width: 1500px;
-  max-height: 1200px;   */
-  background-image: url("./imagesFolder/light.jpg");
-  background-position: top 20% left 0%;
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-y: scroll;
-}
-
 
 /* ----------------Card Styling---------------- */
 .business-card{
@@ -380,6 +59,11 @@ body {
   margin: 0 auto;
   padding: 60px 0;
   border-bottom: 3px solid var(--dark-green);
+  color: var(--white);
+  backdrop-filter: blur(10px);
+  max-width: 50%;
+  max-height: 50%;
+  padding: 20px 40px;
   /* backdrop-filter: blur(10px); */
 }
 
@@ -390,23 +74,6 @@ body {
   border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid var(--border-grey);
-}
-
-/* -----------------------------Review Page--------------------- */
-
-.review-page{
-  background-image: url("./imagesFolder/light.jpg");
-}
-
-/* ------------Movie Class------------ */
-#background-video{
-  z-index: -1;
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 /* --------------------------Hidden class ---------------------- */

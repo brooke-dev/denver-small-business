@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography} from 'mdb-react-ui-kit';
-import ModalComponent from '../ModalComponent';
+import UserProfileModalComponent from './UserProfileModalComponent';
+import './UserProfileCSS.css'
 
 function UserProfile({user, setUser}) {
   
@@ -21,7 +22,7 @@ function UserProfile({user, setUser}) {
                   <MDBTypography tag="h5">{user.first_name} {user.last_name}</MDBTypography>
                   <MDBCardText>username: {user.username}</MDBCardText>
                   {/* MODAL FOR EDIT BUTTON */}
-                  <ModalComponent
+                  <UserProfileModalComponent
                     user={user}
                     setUser={setUser}
                   />

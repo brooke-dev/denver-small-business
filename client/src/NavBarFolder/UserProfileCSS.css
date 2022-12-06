@@ -1,0 +1,38 @@
+/* This CSS includes both the profile page, and the modal for updating it */
+
+/* -----------------USER PROFILE PAGE (using MDB)------------------- */
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+  }
+  
+  .user-profile-page{
+    width: 100vw;
+    padding: none;
+    margin: 0 auto;
+    max-width: 1500px;
+    background-image: url("../imagesFolder/plantCoffee.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: scroll;
+  }
+  
+  
+  /* -----------------User Profile Page Modal Edit ---------------------- */
+  
+  .user-form-container {
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100px
+  }

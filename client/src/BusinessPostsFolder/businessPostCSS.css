@@ -1,0 +1,41 @@
+/* -------------------------Business Post Page ------------------*/
+.business-post-card {
+    background-position: top 50% right 0%;
+    background-repeat: no-repeat; 
+    background-size: center;
+    background-attachment: fixed;
+    overflow-y: scroll;
+  }
+  .businessUsername{
+    position:absolute;
+    top: 2%;
+    right: 90%;
+    font-size: 20px;
+    /* background-color: transparent; */
+    padding: 0;
+    
+
+  }
+
+  .businessUsername img{
+    width: 90%;
+    height: auto;
+  }
+  
+  .business-page {
+    height: 100vh;
+    width: 100vw;
+    padding: none;
+    margin: none;
+    /* max-width: 1500px;
+    max-height: 1200px;   */
+    background-image: url("../imagesFolder/light.jpg");
+  
+    /* background-color: red ; */
+    background-position: top 20% left 0%;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: scroll;
+  }
+  

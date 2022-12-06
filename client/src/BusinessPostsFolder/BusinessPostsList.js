@@ -1,9 +1,12 @@
 import React from 'react'
 import BusinessPostsCard from './BusinessPostsCard'
+import './businessPostCSS.css'
+import './reviewListCSS.css'
 
 function BusinessPostsList({businessPosts, setUser, userId, setBusinessPosts}) {
   
     const renderBusinessPostCard = businessPosts.map((oneBusinessPost)=>{
+      console.log(oneBusinessPost.user.avatar)
       return(
             <BusinessPostsCard 
                 key={oneBusinessPost.id}
@@ -17,6 +20,7 @@ function BusinessPostsList({businessPosts, setUser, userId, setBusinessPosts}) {
                 image={oneBusinessPost.image}
                 myUserId={userId}
                 reviews={oneBusinessPost.reviews}
+                avatar={oneBusinessPost.user.avatar}
                 // Need to change serializer to have this show I think:
                 reviewUsername={oneBusinessPost.user.username}
                 setBusinessPosts={setBusinessPosts}
