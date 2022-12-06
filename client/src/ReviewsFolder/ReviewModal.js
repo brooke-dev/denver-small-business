@@ -84,11 +84,11 @@ const ReviewModal = ({id, handleDelete, user, setUser}) => {
       <MDBModalDialog>
         <MDBModalContent>
           <MDBModalHeader>
-            <MDBModalTitle>Delete</MDBModalTitle>
+            <MDBModalTitle className="modal-title">Delete</MDBModalTitle>
             <MDBBtn className='btn-close' color='black' onClick={toggleShow}></MDBBtn>
           </MDBModalHeader>
 
-          <MDBModalBody>
+          <MDBModalBody className="update-delete-modal-container">
             <div >
                 Are you sure you want to delete? This cannot be undone. 
             </div>
@@ -121,7 +121,7 @@ const ReviewModal = ({id, handleDelete, user, setUser}) => {
             <MDBBtn className='btn-close' color='black' onClick={toggleShowEdit}></MDBBtn>
           </MDBModalHeader>
 
-          <MDBModalBody>
+          <MDBModalBody className="modal-title">
             <div className='update-review-form-container'>
                 <form className="update-review-form" autoComplete='off' onSubmit={handleUpdateSubmit}>
                     <label>Title</label>

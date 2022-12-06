@@ -3,14 +3,29 @@
 .review-page{
     background-image: url("../imagesFolder/light.jpg");
   }
-  
-  /* ------------Movie Class------------ */
-  #background-video{
-    z-index: -1;
-    object-fit: cover;
+
+.review-card{
+    position: relative;
+    margin: 60px;
     width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
+    margin: 0 auto;
+    padding: 60px 0;
+    border-bottom: 3px solid var(--dark-green);
+    color: var(--white);
+    /* backdrop-filter: blur(10px); */
+    max-width: 50%;
+    max-height: 50%;
+    padding: 20px 40px;
+}
+
+.update-review-form-container label{
+  color:var(--dark-green);
+}
+
+.update-delete-modal-container {
+  color: var(--dark-green)
+}
+
+.modal-title{
+  color: var(--dark-green)
+}

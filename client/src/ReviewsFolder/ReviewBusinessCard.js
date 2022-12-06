@@ -17,7 +17,7 @@ const ReviewBusinessCard = ({user, setUser, comment,title,id,rating
   }
 
   return (
-    <div className="review-card business-card">
+    <div className="review-card">
     <h3>title: {title}</h3>
     <h3>rating: {rating}</h3>
     <h3>comment: {comment}</h3>
