@@ -3,7 +3,7 @@ class User < ApplicationRecord
     has_many :reviews, dependent: :destroy
     has_many :reviewed_business_posts, :through => :reviews, :source => :business_post
     # Image Upload
-    has_one_attached :avatar
+    has_one_attached :avatar, dependent: :destroy
   
     # hashed password with bycrypt
     has_secure_password
