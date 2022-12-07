@@ -81,7 +81,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DENVER_SMALL_BUSINESSES_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   # database: denver_small_businesses_production
   # username: denver_small_businesses
   # password: <%= ENV["DENVER_SMALL_BUSINESSES_DATABASE_PASSWORD"] %>
