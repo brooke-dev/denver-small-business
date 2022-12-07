@@ -87,5 +87,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Added for AWS (live domain name)
-  Rails.application.routes.default_url_options[:host] = 'https://busy-bee-small-business.onrender.com'
+  # Rails.application.routes.default_url_options[:host] = 'https://busy-bee-small-business.onrender.com'
 end
