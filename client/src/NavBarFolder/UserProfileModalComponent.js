@@ -79,7 +79,9 @@ function ModalComponent({user, setUser}) {
 
         const formData = new FormData()
         formData.append('user_id', userId)
-        formData.append('avatar', avatarData)
+        if (avatarData) {
+          formData.append('avatar', avatarData)
+        }
         formData.append('first_name', firstName)
         formData.append('last_name', lastName)
         formData.append('username', username)
@@ -143,7 +145,7 @@ function ModalComponent({user, setUser}) {
                     <input type='text'id="zip_code" name="zip_code" value={zipCode} onChange={handleZipCode} required/>
 
                     <label> Avatar </label>
-                    <input type= 'file' accept='image/*' onChange={handleAvatarData} />
+                    <input type= 'file' accept='image/*' value={avatarData} onChange={handleAvatarData} />
                     
                     <MDBBtn>Save changes </MDBBtn>
                       <div id="edit-complete-msg" className={editMsgClassName}>
