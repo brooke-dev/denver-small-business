@@ -88,4 +88,6 @@ Rails.application.configure do
 
   # Added for AWS (live domain name)
   # Rails.application.routes.default_url_options[:host] = 'https://busy-bee-small-business.onrender.com'
+
+  config.secret_key_base = ENV['SECRET_KEY_BASE']
 end
