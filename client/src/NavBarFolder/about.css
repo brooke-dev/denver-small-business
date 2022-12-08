@@ -1,65 +1,63 @@
 /* -------------------------About----------------------------------- */
 
 .about-container{
-    width:500vw;
-    padding: none;
-    margin: 0 auto;
-    max-width: 1500px;
-    background-image: url("../imagesFolder/background1.jpg");
-    background-repeat: no-repeat; 
-    background-size: cover;
-    background-attachment: fixed;
-    overflow-y: scroll;
+  width:500vw;
+  padding: none;
+  margin: 0 auto;
+  max-width: 1500px;
+  background-image: url("../imagesFolder/background1.jpg");
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.about{
+  padding: 100px 50px;
+  margin: 0 auto;
+  width: 60vw;
+  max-width: 1500px;
+  color: var(--white);
+  backdrop-filter: blur(40px);
+}
   
-  }
-  .about{
-    padding: 100px 50px;
-    margin: 0 auto;
-    width: 60vw;
-    max-width: 1500px;
-    color: var(--white);
-      backdrop-filter: blur(15px);
-  }
+.about h1, .about h2, .about h3{
+  color: var(--dark-green)
+}
   
-  .about h1, .about h2, .about h3{
-      color: var(--dark-green)
-    }
+.about li{
+  list-style: none;
+}
   
-  .about li{
-    list-style: none;
-  }
-  
-    .about-information img{
-      height:200px;
-      width:200ox;
-      object-fit: cover;
-      border-radius: 5px;
-      margin: 10px auto;
-    }
-  
-    .about-photos{
-      display:flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .about-information{
-      display: grid;
-      justify-content: center;
-      flex-direction: row;
-      margin: 10px;
-      width: 400px;
-    }
-  
-    .about-information a{
-      text-decoration: none;
-      color:rgb(184, 158, 173);
-    }
-  
-    .about-information p{
-      font-size: 14px;
-      height: 25px;
-      color:rgb(191, 121, 95)
-    }
-  
+.about-information img{
+  height:200px;
+  width:200ox;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.about-photos{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-information{
+  display: grid;
+  justify-content: center;
+  flex-direction: row;
+  margin: 10px;
+  width: 400px;
+}
+
+.about-information a{
+  text-decoration: none;
+  color:rgb(184, 169, 158);
+}
+
+.about-information p{
+  font-size: 14px;
+  height: 25px;
+  color:rgb(180, 91, 59)
+}

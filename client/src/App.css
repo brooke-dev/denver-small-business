@@ -15,7 +15,6 @@
   text-align: center;
   margin: 0 auto;
   text-align: center;
-  /* display: flex; */
   justify-content: center;
   width: 100vw;
   height: 100vh;
@@ -60,7 +59,7 @@ body {
   padding: 60px 0;
   border-bottom: 3px solid var(--dark-green);
   color: var(--white);
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(90px);
   max-width: 50%;
   max-height: 50%;
   padding: 20px 40px;

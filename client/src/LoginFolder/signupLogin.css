@@ -62,7 +62,6 @@
   .loginBlur{
     backdrop-filter: blur(15px);
     background-color: var(--white-blur);
-    /* border: 1px solid white; */
     border-radius: 7px;
     margin: 200px auto;
     width: 50vw;

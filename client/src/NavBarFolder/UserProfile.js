@@ -47,17 +47,7 @@ function UserProfile({user, setUser}) {
                         <MDBTypography tag="h6">Business Owner</MDBTypography>
                         <MDBCardText className="text-muted">{user.business_owner ? "Yes, I own a business!" : "Not a business owner"}</MDBCardText>
                       </MDBCol>
-                      {/* <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Phone</MDBTypography>
-                        <MDBCardText className="text-muted">123 456 789</MDBCardText>
-                      </MDBCol> */}
                     </MDBRow>
-
-                    {/* <div className="d-flex justify-content-start">
-                      <a href="#!"><MDBIcon fab icon="facebook me-3" size="lg" /></a>
-                      <a href="#!"><MDBIcon fab icon="twitter me-3" size="lg" /></a>
-                      <a href="#!"><MDBIcon fab icon="instagram me-3" size="lg" /></a>
-                    </div> */}
                   </MDBCardBody>
                 </MDBCol>
               </MDBRow>

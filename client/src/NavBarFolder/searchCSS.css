@@ -1,0 +1,31 @@
+.search{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    padding: 100px 0 20px 0;
+    background-color: transparent;
+    width: 100vw;
+    max-width: 950px;
+    overflow-y: none;
+  }
+  
+  .search input, .search label{
+    margin: 5px 10px;
+    font-size: 20px;
+    padding: 10px;
+  }
+  
+  .search label{
+    color:black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  
+  .search input{
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+  }

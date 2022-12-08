@@ -23,12 +23,9 @@ function ModalComponent({user, setUser}) {
     const [zipCode, setZipCode] = useState(user.zip_code)
     const [email, setEmail] = useState(user.email)
     const [avatarData, setAvatarData] = useState(null)
-
-    // const history = useHistory()
   
     // renders the user you want to edit
     const userId = user.id  
-    // console.log(user_id)
 
     // Handles all of the values from form inputs
     const handleFirstName = (e) => {
@@ -66,16 +63,6 @@ function ModalComponent({user, setUser}) {
 
     const handleUpdateSubmit = (e) => {
         e.preventDefault();
-      //   const formData = {
-      //       first_name: firstName,
-      //       last_name: lastName,
-      //       username: username, 
-      //       business_owner: businessOwner,
-      //       zip_code: zipCode,
-      //       email: email,
-      //       user_id: userId,
-      //       avatar: avatarData,
-      // }
 
         const formData = new FormData()
         formData.append('user_id', userId)
@@ -91,9 +78,6 @@ function ModalComponent({user, setUser}) {
         
         fetch(`users/${userId}`,{
           method: "PATCH",
-          // headers: {
-          //   "Content-Type": "application/json"
-          // },
           body: formData,
           })
           .then(res => {
@@ -121,6 +105,7 @@ function ModalComponent({user, setUser}) {
               <MDBModalTitle>Edit Profile</MDBModalTitle>
               <MDBBtn className='btn-close' color='black' onClick={toggleShow}></MDBBtn>
             </MDBModalHeader>
+
             <MDBModalBody>
             <div className='user-form-container'>
                 <form className="user-form" autoComplete='off' onSubmit={handleUpdateSubmit}>
@@ -145,11 +130,11 @@ function ModalComponent({user, setUser}) {
                     <input type='text'id="zip_code" name="zip_code" value={zipCode} onChange={handleZipCode} required/>
 
                     <label> Avatar </label>
-                    <input type= 'file' accept='image/*' value={avatarData} onChange={handleAvatarData} />
+                    <input type= 'file' accept='image/*' onChange={handleAvatarData} />
                     
                     <MDBBtn>Save changes </MDBBtn>
                       <div id="edit-complete-msg" className={editMsgClassName}>
-                      <h3>Edit complete!</h3>
+                        <h3>Edit complete!</h3>
                       </div>
                     
                 </form>
