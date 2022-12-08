@@ -12,6 +12,24 @@
     border-radius: 5px;
     box-shadow: 5px 10px 10px var(--box-shadow);
   }
+
+  .comments {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid var(--dark-green);
+  }
+
+  .title-and-rating{
+    display: flex;
+    flex-direction: row;
+    padding: px;
+  }
+
+  .review{
+    display: flex;
+    flex-direction: column;;
+
+  }
   
   .review-form{
     display: flex;

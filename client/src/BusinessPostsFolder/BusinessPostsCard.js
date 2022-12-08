@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-function BusinessPostsCard({id, reviews, setBusinessPosts, reviewUsername, businessName, businessCategory, location, website,favorites, image, myUserId, username, avatar}) {
+function BusinessPostsCard({id, reviews, setBusinessPosts, businessName, businessCategory, location, website,favorites, image, myUserId, username, avatar}) {
   
-  // //map through the comments
+  //map through the comments
   const renderBusinessReviews = reviews?.map((review) => {
     return(
       <div className="comments">
-        <div className="title-rating-box">
-          <p key={review.review.title}> title: {review.review.title}</p>
-          <p key={review.review.rating}> rating: {review.review.rating}</p>
+        <div className= "title-and-rating">
+          <p key={review.review.title}> {review.review.title}</p>
+          <p key={review.review.rating}>⭐ {review.review.rating}</p>
         </div>
-        <p key={review.review.id}> {review.review.comment} - {review.user.username}</p>
+        <div className="review">
+          <p key={review.review.id}> {review.review.comment} - {review.user.username}</p>
+        </div>
+          
       </div>
     
     )

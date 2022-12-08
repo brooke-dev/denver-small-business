@@ -50,7 +50,6 @@ const Signup = ({ setUser, fetchBusinessPosts }) => {
 
   return (
     <div className='signup-page'>
-       {/* <img id="login-img" src={} alt="" /> */}
     <form className='signup-form' onSubmit={handleSubmit}>
       <h1>Sign Up</h1>
 

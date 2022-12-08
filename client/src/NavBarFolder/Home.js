@@ -1,15 +1,18 @@
 import React from 'react'
 import BusinessPostsList from '../BusinessPostsFolder/BusinessPostsList'
+import SearchComponent from './SearchComponent'
 
-function Home({errors, businessPosts, userId, user, setUser, setBusinessPosts}) {
+function Home({search, setSearch, errors, businessPosts, userId, user, setUser, setBusinessPosts}) {
   return (
     <div className='page-container business-page'>
+        <SearchComponent search={search} setSearch={setSearch}/>
         <BusinessPostsList 
             user={user}
             setUser={setUser}
             businessPosts={businessPosts}
             setBusinessPosts={setBusinessPosts}
             userId={userId}
+            search={search} 
         />
 
         <h3>

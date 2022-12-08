@@ -40,7 +40,6 @@ const Login = ({ setUser, fetchBusinessPosts }) => {
   
   return (
     <div className='login-page'>
-       {/* <img id="login-img" src={PlantasticPic} alt="" /> */}
       <form className='login-form' onSubmit={handleSubmit}>
         <h1>Login</h1>
         <label htmlFor="username">Username</label>

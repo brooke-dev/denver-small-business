@@ -3,10 +3,20 @@ import BusinessPostsCard from './BusinessPostsCard'
 import './businessPostCSS.css'
 import './reviewListCSS.css'
 
-function BusinessPostsList({businessPosts, setUser, userId, setBusinessPosts}) {
-  
-    const renderBusinessPostCard = businessPosts.map((oneBusinessPost)=>{
-      console.log(oneBusinessPost.user.avatar)
+function BusinessPostsList({search, businessPosts, setUser, userId, setBusinessPosts}) {
+    // Search Logic
+    const filterBusinessPosts = businessPosts.filter((oneBusinessPostFilter) => {
+      if (oneBusinessPostFilter.business_name.toLowerCase().includes(search.toLowerCase())){
+        return true
+      } else if (oneBusinessPostFilter.business_category.toLowerCase().includes(search.toLowerCase())){
+        return true
+      } else if (oneBusinessPostFilter.location.toLowerCase().includes(search.toLowerCase())){
+        return true
+      } else return false
+    })
+
+
+    const renderBusinessPostCard = filterBusinessPosts.map((oneBusinessPost)=>{
       return(
             <BusinessPostsCard 
                 key={oneBusinessPost.id}
@@ -21,7 +31,6 @@ function BusinessPostsList({businessPosts, setUser, userId, setBusinessPosts}) {
                 myUserId={userId}
                 reviews={oneBusinessPost.reviews}
                 avatar={oneBusinessPost.user.avatar}
-                // Need to change serializer to have this show I think:
                 reviewUsername={oneBusinessPost.user.username}
                 setBusinessPosts={setBusinessPosts}
                 setUser={setUser}

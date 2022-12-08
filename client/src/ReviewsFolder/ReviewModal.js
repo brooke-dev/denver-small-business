@@ -19,7 +19,6 @@ const ReviewModal = ({id, handleDelete, user, setUser}) => {
     const [editModal, setEditModal] = useState(false)
     const toggleShowEdit = () => setEditModal(!editModal);
   // Edit Form State
-    // const [updateReview, setUpdateReview] = useState("");
     const [updated, setUpdated] = useState(false)
     const [errors, setErrors] = useState([]);
     const [updateTitle, setUpdateTitle] = useState("")
@@ -66,7 +65,6 @@ const ReviewModal = ({id, handleDelete, user, setUser}) => {
           res.json().then((err) => console.log(err))
         }
       })
-
  }
 
   const editMsgClassName = updated ? '' : 'hidden';
@@ -74,8 +72,6 @@ const ReviewModal = ({id, handleDelete, user, setUser}) => {
   const formErrorMsg = errors.map((err) => (
     <p key={err}>{err}</p>
   ))
-
-
 
   return (
     <>
