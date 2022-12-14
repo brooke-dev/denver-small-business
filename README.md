@@ -21,6 +21,7 @@ Start by forking and cloning this project repository to your local repository. R
 ```console
 $ cd your-project-name
 $ bundle install
+$ rspec
 $ npm install --prefix client
 $ rails db:create
 $ rails db:migrate db:seed
