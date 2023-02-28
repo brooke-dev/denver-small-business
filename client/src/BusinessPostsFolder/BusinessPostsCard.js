@@ -91,7 +91,7 @@ function BusinessPostsCard({id, reviews, setBusinessPosts, businessName, busines
       <p className='businessUsername' ><img src={avatar} alt={username}/></p>
       <p>❤️{favorites}</p>
       <p><a href={website}>Vist {businessName}'s website here!</a></p>
-      <p><a href="http://maps.google.com/?q={location}">{location}</a></p>
+      <p><a href={"http://maps.google.com/?q=" + location}>{location}</a></p>
       <div className="review-list">
         {renderBusinessReviews.length > 0 ? renderBusinessReviews : noReviewsYet}
       </div>
