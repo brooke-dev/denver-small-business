@@ -19,7 +19,7 @@ const About = () => {
   
       <h2>About the Creator</h2>
       <p>
-       Brooke Ross has completed her 15 week, extremely rigorous online program. With Flatirons school, she has attended classes online Monday through Friday from 9am-5pm since August 29th 2022. She will graduate December 9th, with a certificate in full stack Software Engineering and over 500 hours of documented credit hours. Through this program and its many challenges she has been learning to code with Ruby on Rails (backend), and React and JavaScript (frontend). With this program, she is able to showcase her hard work and passion!
+       Brooke Ross has completed her 15 week, extremely rigorous online program. While attending Flatiron School, she attended classes online, Monday through Friday from 9am-5pm starting August 29th 2022. She graduated December 9th, with a certificate in full stack Software Engineering and over 500 hours of documented credit hours. Through this program and its many challenges she has been learning to code with Ruby on Rails (backend), and React and JavaScript (frontend). 
       </p>
       <h3>Connect with Brooke below</h3>
           
